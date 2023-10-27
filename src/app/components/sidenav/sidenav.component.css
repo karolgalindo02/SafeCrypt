@@ -1,0 +1,12 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  ul.mt-auto {
+    margin-top: auto;
+  }
+  
