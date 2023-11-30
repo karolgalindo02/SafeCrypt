@@ -5,12 +5,11 @@ import {
   initTE,
 } from "tw-elements";
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class FormComponent {
-
+export class LoginComponent {
 }
 
 initTE({ Input, Ripple });

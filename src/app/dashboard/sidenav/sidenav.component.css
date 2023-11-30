@@ -9,4 +9,8 @@ nav {
   ul.mt-auto {
     margin-top: auto;
   }
-  
+  nav a:hover {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  transition: none;
+}

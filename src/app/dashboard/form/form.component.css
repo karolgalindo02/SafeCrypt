@@ -1,5 +1,5 @@
 /* Add the styles to the placeholder pseudo-element */
-input::placeholder {
+input::placeholder, textarea{
     border-radius: 20px;
     background: #F6F6F6;
     box-shadow: 0px 4px 4px 0px #3B136E;

@@ -1,25 +1,27 @@
+<app-sidenav></app-sidenav>
+<div class="p-5 !pl-[260px] text-center" id="content">
 <!-- Container for demo purpose -->
-<div class="container my-24 mx-auto md:px-6">
+<div class="flex items-center justify-center min-h-screen">
   <!-- Section: Design Block -->
-  <section class="mb-32 text-center">
+  <section class="mb-20 text-center">
     <div class="flex justify-center">
       <div class="max-w-[800px]">
         <h1 class="mb-12 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-purple-600">
           SafeCrypt
         </h1>
-        <p class="text-lg text-neutral-500 dark:text-neutral-300">
+        <p class="text-lg text-neutral-500 dark:text-neutral-300 mb-3">
           Solución segura y eficiente de encriptación <br  />
 de texto plano, con capacidad de mantener <br  />
 sus datos sensibles protegidos y accesibles <br  />
 solo para aquellos autorizados.
         </p>
         <button
+        routerLink="/login"
   type="button"
   class="inline-flex items-center rounded-full bg-purple-600 px-6 py-2.5 text-lg font-medium leading-normal text-white hover:bg-purple-700 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-purple-700 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
   <span class="mr-3">Ingresar</span>
-  <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M24.6677 1.38086C24.5049 1.00185 24.1339 0.754507 23.7214 0.75H16.8643C16.2962 0.75 15.8357 1.21051 15.8357 1.77857C15.8357 2.34664 16.2962 2.80714 16.8643 2.80714H21.2391L13.3946 10.6517C12.9935 11.0533 12.9935 11.7039 13.3946 12.1054C13.7962 12.5065 14.4467 12.5065 14.8483 12.1054L22.6929 4.26086V8.63571C22.6929 9.20378 23.1534 9.66429 23.7214 9.66429C24.2895 9.66429 24.75 9.20378 24.75 8.63571V1.77857C24.7493 1.64185 24.7213 1.50664 24.6677 1.38086Z" fill="white"/>
-    <path d="M20.9786 11.7214C20.4136 11.7288 19.9574 12.185 19.95 12.75V18.2357C19.9425 20.6942 17.9513 22.6853 15.4929 22.6929H7.26428C4.8058 22.6853 2.81467 20.6942 2.80714 18.2357V10.0071C2.81467 7.54866 4.8058 5.55753 7.26428 5.55H12.75C13.3181 5.55 13.7786 5.08949 13.7786 4.52143C13.7786 3.95336 13.3181 3.49286 12.75 3.49286H7.26428C3.66654 3.49286 0.75 6.4094 0.75 10.0071V18.2357C0.75 21.8335 3.66654 24.75 7.26428 24.75H15.4929C19.0906 24.75 22.0071 21.8335 22.0071 18.2357V12.75C21.9998 12.185 21.5435 11.7288 20.9786 11.7214Z" fill="white"/>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
   </svg>
 </button>
 
@@ -38,3 +40,4 @@ solo para aquellos autorizados.
   <!-- Section: Design Block -->
 </div>
 <!-- Container for demo purpose -->
+</div>

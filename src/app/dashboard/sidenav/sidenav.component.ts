@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Sidenav, initTE } from 'tw-elements';
 
 interface HTMLElementWithSidenav extends HTMLElement {
@@ -12,12 +13,24 @@ interface HTMLElementWithSidenav extends HTMLElement {
 })
 export class SidenavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {}
+
+  Form(){
+    this.router.navigate(['form']);
+  }
+  Crypt(){
+    this.router.navigate(['crypt']);
+  }
+  Login(){
+    this.router.navigate(['login']);
+  }
+  Tables(){
+    this.router.navigate(['tables']);
+  }
 
   ngOnInit(): void {
     // Initialize Tailwind Elements
     initTE({ Sidenav });
-
     // Add event listener for slim toggler
     document
       .getElementById("slim-toggler")
@@ -31,5 +44,9 @@ export class SidenavComponent implements OnInit {
           instance?.toggleSlim();
         }
       });
+  }
+
+  navigateToComponent(): void {
+    this.router.navigate(['']);
   }
 }
