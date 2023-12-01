@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 import { Sidenav, initTE } from 'tw-elements';
 
 interface HTMLElementWithSidenav extends HTMLElement {
@@ -13,7 +14,8 @@ interface HTMLElementWithSidenav extends HTMLElement {
 })
 export class SidenavComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+    private userService: UserService) {}
 
   Form(){
     this.router.navigate(['form']);
@@ -45,6 +47,14 @@ export class SidenavComponent implements OnInit {
         }
       });
   }
+
+  onClick() {
+    this.userService.logout()
+    .then(() => {
+      this.router.navigate(['/content']);
+    })
+    .catch(error => console.log(error));
+   }
 
   navigateToComponent(): void {
     this.router.navigate(['']);

@@ -3,12 +3,13 @@
 <section class="relative mb-6" data-te-input-wrapper-init>
   <div class="flex flex-wrap justify-center">
     <div class="w-full shrink-0 grow-0 basis-auto md:w-8/12 lg:w-7/12 xl:w-6/12">
+      <form [formGroup]="encriptacion">
       <h2 class="is-size-2" class="text-start mb-12 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-purple-600">Encriptación</h2>
       <div class="text-start mb-6 ">
       <div class="field ">
         <label class="label text-lg text-neutral-500 dark:text-neutral-300">Información para encriptar</label>
         <div class="control">
-          <textarea [(ngModel)]="informacionEncriptarValue" id="informacionEncriptar" class="textarea w-full h-60 text-lg text-neutral-500 dark:text-neutral-300" placeholder="Digite el texto para procesar"></textarea>
+          <textarea formControlName="textoplano" [(ngModel)]="informacionEncriptarValue" id="informacionEncriptar" class="textarea w-full h-60 text-lg text-neutral-500 dark:text-neutral-300" placeholder="Digite el texto para procesar"></textarea>
         </div>
       </div>
     </div>
@@ -22,11 +23,11 @@
       <div class="field">
         <label class="label text-lg text-neutral-500 dark:text-neutral-300">Resultado</label>
         <div class="control">
-          <textarea readonly id="resultadoEncriptacion" class="textarea h-60 w-full" [(ngModel)]="resultadoEncriptacionValue"></textarea>
+          <textarea formControlName="textocifrado" readonly id="resultadoEncriptacion" class="textarea h-60 w-full" [(ngModel)]="resultadoEncriptacionValue"></textarea>
         </div>
       </div>
       </div>
-      
+    </form>
     </div>
     <div
     class="max-w-xs rounded-lg  bg-purple-600 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 ml-4 w-auto mt-20">
@@ -43,12 +44,29 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
         </svg>
       </button>
-      <button (click)="decryptText()" class="button is-success w-full inline-flex items-center rounded-full bg-purple-400 px-6 py-2.5 text-lg font-medium leading-normal text-white hover:bg-purple-700 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-purple-700 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" 
-      id="botonEncriptar">Desencriptar
+      <button (click)="decryptText()" class="button is-success w-full mb-6 inline-flex items-center rounded-full bg-purple-400 px-6 py-2.5 text-lg font-medium leading-normal text-white hover:bg-purple-700 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-purple-700 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" 
+      id="botonEncriptar">Desencriptar 
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
         <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
       </svg>
     </button>
+    <h5
+      class="mb-3 text-xl font-medium leading-tight text-white dark:text-neutral-50">
+      Otras acciones
+    </h5>
+
+    <button (click)="switchText()" class="button is-success w-full mb-6 inline-flex items-center rounded-full bg-purple-400 px-6 py-2.5 text-lg font-medium leading-normal text-white hover:bg-purple-700 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-purple-700 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" 
+      id="botonEncriptar">Cambiar texto 
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+      </svg>
+    </button>
+    <button (click)="onSubmit()" class="button is-success w-full inline-flex items-center rounded-full bg-purple-400 px-6 py-2.5 text-lg font-medium leading-normal text-white hover:bg-purple-700 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-purple-700 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" 
+    id="botonEncriptar">Guardar 
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+    </svg>
+  </button>
     </div>
     </div>
   </div>

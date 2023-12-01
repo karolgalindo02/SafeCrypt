@@ -1,26 +1,37 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { Input, Ripple, initTE, } from "tw-elements";
+import { WorkteamService } from './../../services/workteam.service';
 
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Input, Ripple, initTE, } from "tw-elements";
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent {
-  workTeam = {
-    nombreEquipo: '',
-    descripcion: '',
-    tipo: ''
-  };
 
-  constructor(private http: HttpClient) { }
+export class FormComponent implements OnInit {
+    workteam: FormGroup;
+  
+    constructor(
+      private  WorkteamService: WorkteamService,
+    ) {
+      this.workteam = new FormGroup({
+        nombreEquipo: new FormControl(),
+        descripcion: new FormControl(),
+        tipo: new FormControl()
+      });
+    }
+    ngOnInit(): void {
+      throw new Error('Method not implemented.');
+    }
 
-  submitForm() {
-    this.http.post('http://localhost:8081/workteam/create', this.workTeam).subscribe(response => {
-      console.log(response);
-    });
+  async onSubmit() {
+    console.log(this.workteam.value);
+    const response = await this.WorkteamService.addWorkteam(this.workteam.value);
+    console.log(response);
   }
-}
+  }
+
+
 
 initTE({ Input, Ripple });

@@ -1,7 +1,9 @@
 {
     "cSpell.words": [
         "Desencriptacion",
-        "pdfgenerator"
+        "pdfgenerator",
+        "textocifrado",
+        "textoplano"
     ],
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#ab307e",
@@ -22,5 +24,6 @@
         "titleBar.inactiveBackground": "#83256199",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#832561"
+    "peacock.color": "#832561",
+    "commentTranslate.source": "Google"
 }

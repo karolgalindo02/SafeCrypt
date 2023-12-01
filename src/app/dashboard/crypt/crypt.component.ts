@@ -1,12 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import * as CryptoJS from 'crypto-js';
+import { DataService } from './../../services/data.service';
 
 @Component({
   selector: 'app-crypt',
   templateUrl: './crypt.component.html',
   styleUrls: ['./crypt.component.css']
 })
-export class CryptComponent {
+export class CryptComponent implements OnInit {
+  encriptacion: FormGroup;
+
+  constructor(
+    private  DataService: DataService,
+  ) {
+    this.encriptacion = new FormGroup({
+      textoplano: new FormControl(),
+      textocifrado: new FormControl()
+    });
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
   informacionEncriptarValue = '';
   resultadoEncriptacionValue = '';
 
@@ -27,5 +43,15 @@ export class CryptComponent {
     const bytes  = CryptoJS.AES.decrypt(this.informacionEncriptarValue, 'secret key 123');
     const originalText = bytes.toString(CryptoJS.enc.Utf8);
     this.resultadoEncriptacionValue = originalText;
+  }
+
+  switchText() {
+    this.informacionEncriptarValue = this.resultadoEncriptacionValue;
+  }
+
+  async onSubmit() {
+    console.log(this.encriptacion.value);
+    const response = await this.DataService.addData(this.encriptacion.value);
+    console.log(response);
   }
 }

@@ -5,7 +5,9 @@ import { CryptComponent } from './dashboard/crypt/crypt.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { FormComponent } from './dashboard/form/form.component';
 import { LoginComponent } from './dashboard/login/login.component';
+import { RegisterComponent } from './dashboard/register/register.component';
 import { TablesComponent } from './dashboard/tables/tables.component';
+import { WorkteamComponent } from './dashboard/workteam/workteam.component';
 
 
 
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'tables', component: TablesComponent},
   { path: 'login', component: LoginComponent},
   { path: 'content', component: ContainerComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'workteam', component: WorkteamComponent},
 ];
 
 @NgModule({

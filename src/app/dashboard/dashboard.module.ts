@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SidenavComponent } from './sidenav/sidenav.component';
 
-
-
 const routes: Routes = [
 { path: '', component: SidenavComponent },
 ];  
@@ -12,6 +10,6 @@ const routes: Routes = [
     exports: [RouterModule],
     declarations: [
 
-    ]
+  ]
 })
 export class DashboardModule { }

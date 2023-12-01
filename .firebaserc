@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "safecrypt-3e761": {
+      "hosting": {
+        "SafeCrypt": [
+          "safecrypt"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "safecrypt-3e761"
+  }
+}
