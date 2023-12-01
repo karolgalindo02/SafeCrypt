@@ -1,7 +1,8 @@
 {
   "hosting": [
     {
-      "public": "public",
+      "site": "Safecrypt",
+      "public": "dist/Safecrypt",
       "ignore": [
         "firebase.json",
         "**/.*",
